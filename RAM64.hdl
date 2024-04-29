@@ -1,0 +1,87 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/3/a/RAM64.hdl
+/**
+ * Memory of sixty four 16-bit registers.
+ * If load is asserted, the value of the register selected by
+ * address is set to in; Otherwise, the value does not change.
+ * The value of the selected register is emitted by out.
+ */
+CHIP RAM64 {
+    IN in[16], load, address[6];
+    OUT out[16];
+
+    PARTS:
+    // Define the sixty-four 16-bit registers
+    Register(in=in, load=load & address[0], out=out0);
+    Register(in=in, load=load & address[0], out=out1);
+    Register(in=in, load=load & address[0], out=out2);
+    Register(in=in, load=load & address[0], out=out3);
+    Register(in=in, load=load & address[0], out=out4);
+    Register(in=in, load=load & address[0], out=out5);
+    Register(in=in, load=load & address[0], out=out6);
+    Register(in=in, load=load & address[0], out=out7);
+    Register(in=in, load=load & address[0], out=out8);
+    Register(in=in, load=load & address[0], out=out9);
+    Register(in=in, load=load & address[0], out=out10);
+    Register(in=in, load=load & address[0], out=out11);
+    Register(in=in, load=load & address[0], out=out12);
+    Register(in=in, load=load & address[0], out=out13);
+    Register(in=in, load=load & address[0], out=out14);
+    Register(in=in, load=load & address[0], out=out15);
+    Register(in=in, load=load & address[0], out=out16);
+    Register(in=in, load=load & address[0], out=out17);
+    Register(in=in, load=load & address[0], out=out18);
+    Register(in=in, load=load & address[0], out=out19);
+    Register(in=in, load=load & address[0], out=out20);
+    Register(in=in, load=load & address[0], out=out21);
+    Register(in=in, load=load & address[0], out=out22);
+    Register(in=in, load=load & address[0], out=out23);
+    Register(in=in, load=load & address[0], out=out24);
+    Register(in=in, load=load & address[0], out=out25);
+    Register(in=in, load=load & address[0], out=out26);
+    Register(in=in, load=load & address[0], out=out27);
+    Register(in=in, load=load & address[0], out=out28);
+    Register(in=in, load=load & address[0], out=out29);
+    Register(in=in, load=load & address[0], out=out30);
+    Register(in=in, load=load & address[0], out=out31);
+    Register(in=in, load=load & address[0], out=out32);
+    Register(in=in, load=load & address[0], out=out33);
+    Register(in=in, load=load & address[0], out=out34);
+    Register(in=in, load=load & address[0], out=out35);
+    Register(in=in, load=load & address[0], out=out36);
+    Register(in=in, load=load & address[0], out=out37);
+    Register(in=in, load=load & address[0], out=out38);
+    Register(in=in, load=load & address[0], out=out39);
+    Register(in=in, load=load & address[0], out=out40);
+    Register(in=in, load=load & address[0], out=out41);
+    Register(in=in, load=load & address[0], out=out42);
+    Register(in=in, load=load & address[0], out=out43);
+    Register(in=in, load=load & address[0], out=out44);
+    Register(in=in, load=load & address[0], out=out45);
+    Register(in=in, load=load & address[0], out=out46);
+    Register(in=in, load=load & address[0], out=out47);
+    Register(in=in, load=load & address[0], out=out48);
+    Register(in=in, load=load & address[0], out=out49);
+    Register(in=in, load=load & address[0], out=out50);
+    Register(in=in, load=load & address[0], out=out51);
+    Register(in=in, load=load & address[0], out=out52);
+    Register(in=in, load=load & address[0], out=out53);
+    Register(in=in, load=load & address[0], out=out54);
+    Register(in=in, load=load & address[0], out=out55);
+    Register(in=in, load=load & address[0], out=out56);
+    Register(in=in, load=load & address[0], out=out57);
+    Register(in=in, load=load & address[0], out=out58);
+    Register(in=in, load=load & address[0], out=out59);
+    Register(in=in, load=load & address[0], out=out60);
+    Register(in=in, load=load & address[0], out=out61);
+    Register(in=in, load=load & address[0], out=out62);
+    Register(in=in, load=load & address[0], out=out63);
+
+    // Select the appropriate output based on the address
+    Multiplexor16(a=out0, b=out1, c=out2, d=out3, e=out4, f=out5, g=out6, h=out7, i=out8, j=out9, k=out10, l=out11, m=out12, n=out13, o=out14, p=out15, 
+                    q=out16, r=out17, s=out18, t=out19, u=out20, v=out21, w=out22, x=out23, y=out24, z=out25, aa=out26, ab=out27, ac=out28, ad=out29, ae=out30, af=out31, 
+                    ag=out32, ah=out33, ai=out34, aj=out35, ak=out36, al=out37, am=out38, an=out39, ao=out40, ap=out41, aq=out42, ar=out43, as=out44, at=out45, au=out46, 
+                    av=out47, aw=out48, ax=out49, ay=out50, az=out51, ba=out52, bb=out53, bc=out54, bd=out55, be=out56, bf=out57, bg=out58, bh=out59, bi=out60, bj=out61, 
+                    bk=out62, bl=out63, sel=address, out=out);
